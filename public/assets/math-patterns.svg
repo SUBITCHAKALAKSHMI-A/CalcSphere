@@ -1,0 +1,26 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Plus symbol -->
+  <g fill="#000000" fill-opacity="0.05">
+    <path d="M40 20h20v-20h10v20h20v10h-20v20h-10v-20h-20z" />
+    
+    <!-- Minus symbol -->
+    <path d="M10 55h30v10h-30z" />
+    
+    <!-- Division symbol -->
+    <path d="M70 55h20v10h-20z" />
+    <circle cx="80" cy="45" r="5" />
+    <circle cx="80" cy="75" r="5" />
+    
+    <!-- Multiplication cross -->
+    <path d="M15 80l10 10l-5 5l-10 -10z" />
+    <path d="M10 85l10 -10l5 5l-10 10z" />
+    
+    <!-- Equals symbol -->
+    <path d="M40 80h30v5h-30z" />
+    <path d="M40 90h30v5h-30z" />
+    
+    <!-- Pi symbol -->
+    <path d="M85 85v-15h10v15h-2v-13h-6v13z" />
+    <path d="M80 70h20v2h-20z" />
+  </g>
+</svg>

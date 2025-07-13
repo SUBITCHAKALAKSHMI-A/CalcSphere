@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Theme-specific styles for calculator components */
+.standard-calculator-theme {
+  background: linear-gradient(145deg, rgba(255,255,255,0.4) 0%, rgba(240,249,255,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+.scientific-calculator-theme {
+  background: linear-gradient(145deg, rgba(238,242,255,0.4) 0%, rgba(224,231,255,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(79, 70, 229, 0.1);
+}
+
+.graph-calculator-theme {
+  background: linear-gradient(145deg, rgba(236,254,255,0.4) 0%, rgba(209,250,254,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+}
+
+.matrix-calculator-theme {
+  background: linear-gradient(145deg, rgba(254,242,242,0.4) 0%, rgba(254,226,226,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(239, 68, 68, 0.1);
+}
+
+.equation-calculator-theme {
+  background: linear-gradient(145deg, rgba(240,253,244,0.4) 0%, rgba(220,252,231,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(34, 197, 94, 0.1);
+}
+
+.statistics-calculator-theme {
+  background: linear-gradient(145deg, rgba(255,251,235,0.4) 0%, rgba(254,243,199,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(245, 158, 11, 0.1);
+}
+
+.unit-converter-theme {
+  background: linear-gradient(145deg, rgba(250,245,255,0.4) 0%, rgba(243,232,255,0.8) 100%);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.1);
+}
+
+/* Mathematical decorative elements */
+.mathematical-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 30%, rgba(147, 197, 253, 0.1) 0%, transparent 10%),
+    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 15%),
+    radial-gradient(circle at 40% 80%, rgba(167, 139, 250, 0.1) 0%, transparent 12%),
+    radial-gradient(circle at 70% 20%, rgba(96, 165, 250, 0.1) 0%, transparent 14%);
+}
+
+.math-symbol-bg {
+  position: relative;
+}
+
+.math-symbol-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z' fill='%23000000' fill-opacity='0.4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.calculator-button {
+  @apply relative overflow-hidden transition-all duration-300;
+}
+
+.calculator-button::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, transparent 1%, rgba(255,255,255,0.1) 1%) center/15000%;
+  opacity: 0;
+  transition: background 0.8s, opacity 0.3s;
+}
+
+.calculator-button:active::after {
+  background-size: 100%;
+  opacity: 0.3;
+  transition: 0s;
+}
+
+.number-button {
+  @apply bg-gradient-to-b from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900;
+}
+
+.operation-button {
+  @apply bg-gradient-to-b from-blue-50 to-blue-100 dark:from-blue-900/40 dark:to-blue-800/40;
+}
+
+.function-button {
+  @apply bg-gradient-to-b from-purple-50 to-purple-100 dark:from-purple-900/40 dark:to-purple-800/40;
+}
+
+.equals-button {
+  @apply bg-gradient-to-b from-blue-500 to-blue-600 dark:from-blue-600 dark:to-blue-700;
+}
+
+/* Animations */
+.animate-in {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.slide-in-from-bottom-8 {
+  transform: translateY(2rem);
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(2rem); }
+  to { transform: translateY(0); }
+}
+
+.duration-700 {
+  animation-duration: 700ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
